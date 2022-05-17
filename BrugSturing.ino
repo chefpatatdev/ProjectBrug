@@ -1,22 +1,30 @@
 #include <Arduino.h>
 #include <CayenneMQTTSerial.h>
 
-int topEindLoop = 2;
-int bottomEindLoop = 3;
+int topLimit = 2; //limit switches
+int bottomLimit = 3;
 
 int leftHBridge = 4;
 int rightHBridge = 5;
 
-int incomingByte = 0;
+int state = 1; 
 
-int state = 1;
-int channel1 = 0;
+/*
+state = 0 :stop
+state = 1 :bottomLimit switch
+state = 2 :topLimit switch
+state = 3 :bridge going up
+state = 4 :bridge going down
+*/
+
+int channel1 = 0; //values returned by virtual channels
 int channel2 = 0;
 
-char username[] = "e0abbbc0-b0d0-11ec-a681-73c9540e1265";
-char password[] = "2d5434e6253fd493bb519a9a0627b1464ef40c4f";
-char clientID[] = "552484c0-d1c2-11ec-a681-73c9540e1265";
-#define VIRTUAL_CHANNEL_1 1
+char username[] = " "; //Cayenne username
+char password[] = " "; //password
+char clientID[] = " "; //clientID
+
+#define VIRTUAL_CHANNEL_1 1 //selected virtual channels
 #define VIRTUAL_CHANNEL_2 2
 
 
@@ -54,11 +62,12 @@ void setup()
   pinMode(bottomEindLoop,INPUT_PULLUP);
   pinMode(leftHBridge,OUTPUT);
   pinMode(rightHBridge,OUTPUT);
-	Cayenne.begin(username, password, clientID,9600);
+  Cayenne.begin(username, password, clientID,9600);
 }
 
 void loop() {
-	Cayenne.loop();
+  Cayenne.loop();
+	
   if(digitalRead(bottomEindLoop)==1 && state == 4){
   
     bottomDetect();
@@ -81,7 +90,7 @@ void loop() {
 }
 
 
-CAYENNE_IN(VIRTUAL_CHANNEL_1)
+CAYENNE_IN(VIRTUAL_CHANNEL_1) //reading virtualchannel 1
 {
 	int value = getValue.asInt();
 	CAYENNE_LOG("Channel %d, pin %d, value %d", VIRTUAL_CHANNEL_1, value);
@@ -89,14 +98,14 @@ CAYENNE_IN(VIRTUAL_CHANNEL_1)
 
 }
 
-CAYENNE_IN(VIRTUAL_CHANNEL_2)
+CAYENNE_IN(VIRTUAL_CHANNEL_2) //reading virtualchannel 2
 {
 	int value = getValue.asInt();
 	CAYENNE_LOG("Channel %d, pin %d, value %d", VIRTUAL_CHANNEL_2, value);
   channel2=value;
 }
 
-CAYENNE_OUT_DEFAULT()
+CAYENNE_OUT_DEFAULT() //keeping cayenne awake
 {
 	Cayenne.virtualWrite(0, millis());
 }
