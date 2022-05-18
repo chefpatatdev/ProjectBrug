@@ -4,7 +4,9 @@ Code van de programma's die zijn gemaakt om de brug te monitoren en besturen.
 ![Schematic](https://user-images.githubusercontent.com/59780719/168992573-c9e88081-6b85-41b0-b615-63509bee3d7f.jpg)
 
 
-Het resultaat is dat we een brug hebben die we kunnen besturen vanop afstand via smartphone of pc.
+Het resultaat is dat we een brug hebben die we kunnen besturen vanop afstand via smartphone of pc. Via cayenne kan de waarde van het rekstrookje weergegeven worden en ook live geplot via matplotlib. Er zijn twee drukknoppen op cayenne waarmee de brug omhoog of naar gelaten kan gelaten worden.
+
+De grootste uitdaingen waren om de arduino te verbinden met cayenne en om de data live te tonen op matplotlib.
 
 # Arduino (Ricky)
 Het arduino programma verbind de arduino met cayenne en stuurt de H-brug aan.
@@ -14,11 +16,11 @@ Ricky heeft de schakeling gemaakt en het arduino programma, Thibault heeft gehol
 https://github.com/chefpatatdev/ProjectBrug/blob/main/BrugSturing.ino
 
 * In het programma wordt er gebruik gemaakt van een state machine om de status van de brug bij te houden.  
-state = 0 :stop  
-state = 1 :bottomLimit switch  
-state = 2 :topLimit switch  
-state = 3 :bridge going up  
-state = 4 :bridge going down
+state = 0 : stop  
+state = 1 : bottomLimit switch  
+state = 2 : topLimit switch  
+state = 3 : bridge going up  
+state = 4 : bridge going down
 
 * De switchen zijn NO en verbonden via input_pullup dus er is geen extra weerstand nodig. De H-brug is gemaakt in volgende configuratie met IRF5210 en IRF3205.
 ![image](https://user-images.githubusercontent.com/59780719/168990188-9cd6bc53-60d3-431d-8670-a35bd4453de7.png)
