@@ -16,7 +16,7 @@ state = 2 :topLimit switch
 state = 3 :bridge going up  
 state = 4 :bridge going down
 
-* De switchen zijn NO en verbonden via input_pullup dus er is geen extra weerstand nodig.
+* De switchen zijn NO en verbonden via input_pullup dus er is geen extra weerstand nodig. De H-brug is gemaakt in volgende configuratie met IRF5210 en IRF3205.
 ![image](https://user-images.githubusercontent.com/59780719/168990188-9cd6bc53-60d3-431d-8670-a35bd4453de7.png)
 
 !GEEN SERIAL PRINT TOEVOEGEN IN DE CODE!
