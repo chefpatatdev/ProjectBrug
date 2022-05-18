@@ -27,11 +27,12 @@ state = 4 :bridge going down
 
 # Rasberry pi (Jarne, Dries, Thibault)
 De rasberry pi leest het rekstrookje in via de qwiic scale die het signaal versterkt van het rekstrookje. Ook zal het de waarden kunnen versturen via MQTT naar cayenne.
+Dries heeft de wheatstone brug gemaakt. Thibault heeft de cayenne omgeving gemaakt en meeggeholpen met matplotlib implementatie in het python programmma. Jarne heeft het python programma gemaakt.
 
-* Inlezen van qwiic scale en plotten naar matlpotlib *(Jarne en Thibault)
+* Inlezen van qwiic scale en plotten naar matlpotlib (Jarne en Thibault)
 https://github.com/chefpatatdev/ProjectBrug/blob/main/inlezen-rekstrookje.py
 
-* Wheatstone brug aan de qwiic scale *(Dries)
+* Wheatstone brug aan de qwiic scale (Dries)
 ![image](https://user-images.githubusercontent.com/59780719/168990479-891f8897-4401-41ad-a796-87cc666bbe08.png)
 
 
