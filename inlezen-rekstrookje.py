@@ -15,9 +15,6 @@ client = cayenne.client.CayenneMQTTClient()
 
 client.begin(MQTT_USERNAME, MQTT_PASSWORD, MQTT_CLIENT_ID)
 
-
-
-
 qwiic = QwiicScale()
 
 qwiic.begin()
@@ -34,8 +31,6 @@ waarde = qwiic.getReading()
 calibration_factor = (waarde-Zero_offset)/gewicht 
 print(waarde)
 print(calibration_factor)
-
- 
 
     
 style.use('fivethirtyeight')
@@ -73,9 +68,3 @@ def animate(i):
     
 ani = animation.FuncAnimation(fig, animate, interval=1000)
 plt.show()
-
-
-
-
-
-
