@@ -1,11 +1,11 @@
 #include <Arduino.h>
 #include <CayenneMQTTSerial.h>
 
-int topLimit = 2; //limit switches
-int bottomLimit = 3;
+int topLimit = 4; //limit switches
+int bottomLimit = 5;
 
-int leftHBridge = 4;
-int rightHBridge = 5;
+int leftHBridge = 2;
+int rightHBridge = 3;
 
 int state = 1; 
 
