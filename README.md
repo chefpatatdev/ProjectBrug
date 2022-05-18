@@ -35,6 +35,7 @@ Dries heeft de wheatstone brug gemaakt. Thibault heeft de cayenne omgeving gemaa
 https://github.com/chefpatatdev/ProjectBrug/blob/main/inlezen-rekstrookje.py
 
 * Wheatstone brug aan de qwiic scale (Dries)
-![image](https://user-images.githubusercontent.com/59780719/168990479-891f8897-4401-41ad-a796-87cc666bbe08.png)
+![image](https://user-images.githubusercontent.com/59780719/169135913-91176e8b-3d6b-484c-9f3a-473e9fc7cede.png)
+
 
 
