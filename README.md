@@ -6,6 +6,9 @@ Code van de programma's die zijn gemaakt om de brug te monitoren en besturen.
 
 Het resultaat is dat we een brug hebben die we kunnen besturen vanop afstand via smartphone of pc. Via cayenne kan de waarde van het rekstrookje weergegeven worden en ook live geplot via matplotlib. Er zijn twee drukknoppen op cayenne waarmee de brug omhoog of naar gelaten kan gelaten worden.
 
+![image](https://user-images.githubusercontent.com/59780719/169141740-c40b8e1e-7270-4fa0-a5e8-1bc23f691f07.png)
+
+
 De grootste uitdaingen waren om de arduino te verbinden met cayenne en om de data live te tonen op matplotlib.
 
 # Arduino (Ricky)
